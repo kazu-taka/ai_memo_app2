@@ -19,6 +19,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        view()->share('darkMode', session('darkMode', false));
+
+        view()->composer('*', function ($view) {
+            $view->with('darkMode', session('darkMode', false));
+        });
     }
 }
