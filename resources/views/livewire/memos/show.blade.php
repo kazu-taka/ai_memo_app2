@@ -20,6 +20,11 @@ mount(function (Memo $memo) {
                     作成日: {{ $memo->created_at->format('Y年m月d日 H:i') }}
                 </div>
                 <div class="whitespace-pre-wrap">{{ $memo->body }}</div>
+                <div class="mt-4">
+                    <x-secondary-button tag="a" href="{{ route('memos.edit', $memo) }}" wire:navigate>
+                        編集
+                    </x-secondary-button>
+                </div>
             </div>
         </div>
     </div>
